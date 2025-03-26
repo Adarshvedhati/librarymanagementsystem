@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <div id="nav">
+        <ul>
+            <li><a href="{% url 'home'%}">HOME</a></li>
+            <li><a href="{% url 'add'%}">ADD BOOKS</a></li>
+            <li><a href="{% url 'list'%}">DISPLAY BOOK</a></li>
+            <li>
+                <form action="" style="height: 30px; border-radius: 20px;">
+                    <input type="search" name="search" id="">
+                </form>
+            </li>
+        </ul>
+    </div>
+    {%block content%}
+    {%endblock content%}
+    
+</body>
+</html>

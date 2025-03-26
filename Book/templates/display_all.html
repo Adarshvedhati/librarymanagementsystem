@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% block content%}
+{% for i in data%}
+{% if search%}
+<h1 style="text-align: center;"> your search result is</h1>
+{% endif %}
+<div id="list">
+    <h1>title:{{i.title}}</h1>
+<p><b>Authoe:</b>{{i.author}}</p>
+<p><b>published_date:</b>{{i.published_date}}</p>
+<p><b>Description:</b>{{i.desc}}</p>   
+<button><a href="{% url 'update' i.id %}">UPDATE</a></button><br>
+<button><a href="{% url 'delete' i.id %}">delete</a></button>
+</div>
+{% empty %}
+<h1 style="text-align: center;">no books are avilable</h1>
+{% endfor%}
+{%endblock content%}
