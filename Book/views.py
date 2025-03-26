@@ -9,7 +9,7 @@ def home(request):
     context={
         'title':'home'
     }
-    return render(request,'base.html',context)
+    return render(request,'index.html',context)
 def add_book(request):
     form=BooksForms()
     if request.method=='POST':
